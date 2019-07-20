@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <span>Classes</span>
+  
+    <!-- This fills the remaining space of the current row -->
+    <span class="fill-remaining-space"></span>
+
+    <mat-form-field class="search-form-field">
+        <input matInput type="text" placeholder="Rechercher" [(ngModel)]="listFilter">
+        <button mat-button *ngIf="listFilter" matSuffix mat-icon-button aria-label="Effacer" (click)="listFilter=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+  </mat-toolbar>
+
+  <mat-list>
+    <a  mat-list-item 
+        *ngFor="let schoolClass of filteredSchoolClasses"> 
+            {{ schoolClass.label }} 
+    </a>
+</mat-list>
