@@ -1,0 +1,6 @@
+<mat-toolbar *ngIf='schoolClass'>
+    <button mat-icon-button>
+        <mat-icon (click)="onBack()">arrow_back_ios</mat-icon>
+    </button>
+    <span>{{schoolClass.label}}</span>
+</mat-toolbar>

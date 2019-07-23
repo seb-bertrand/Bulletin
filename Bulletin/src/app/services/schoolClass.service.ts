@@ -5,6 +5,12 @@ import { SchoolClass } from 'src/app/shared/models/school-class';
     providedIn: 'root'
 })
 export class SchoolClassService {
+  getSchoolClassById(id: number): SchoolClass {
+    return {
+        id,
+        label: 'Classe test'
+    };
+  }
     getSchoolClasses(): SchoolClass[] {
         return [
             {
