@@ -3,7 +3,6 @@ import { SchoolClass } from 'src/app/shared/models/school-class';
 import { SchoolClassService } from 'src/app/services/schoolClass.service';
 
 @Component({
-  selector: 'app-school-classes-list',
   templateUrl: './school-classes-list.component.html',
   styleUrls: ['./school-classes-list.component.css']
 })

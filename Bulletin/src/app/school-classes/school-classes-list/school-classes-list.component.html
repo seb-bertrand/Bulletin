@@ -12,9 +12,9 @@
       </mat-form-field>
   </mat-toolbar>
 
-  <mat-list>
-    <a  mat-list-item 
+  <mat-nav-list *ngIf='filteredSchoolClasses && filteredSchoolClasses.length'>
+    <a  mat-list-item         
         *ngFor="let schoolClass of filteredSchoolClasses"> 
             {{ schoolClass.label }} 
     </a>
-</mat-list>
+</mat-nav-list>
