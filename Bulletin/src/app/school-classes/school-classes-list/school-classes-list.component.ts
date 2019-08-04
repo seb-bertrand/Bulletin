@@ -24,7 +24,7 @@ export class SchoolClassesListComponent implements OnInit {
   constructor(private schoolClassService: SchoolClassService) { }
 
   ngOnInit() {
-    this.schoolClassService.getSchoolClasses();
+    this.getSchoolClasses();
   }
 
   getSchoolClasses() {

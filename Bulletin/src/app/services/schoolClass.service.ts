@@ -22,11 +22,11 @@ export class SchoolClassService {
 
         return new Observable<SchoolClass[]>(observer => {
             this.db.allDocs( {
-                startkey: 'sc_',
-                endkey: 'sc_\ufff0',
+                 startkey: 'sc_',
+                 endkey: 'sc_\ufff0',
                 include_docs: true
             }).then((results) => {
-                results.forEach(result => {
+                results.rows.forEach(result => {
                     schoolClasses.push(result.doc);
                 });
                 observer.next(schoolClasses);
@@ -38,14 +38,14 @@ export class SchoolClassService {
         return new Observable<SchoolClass | undefined>(observer => {
             this.db.get(id)
                    .then((result) => {
-                    observer.next(result.doc);
+                    observer.next(result);
             });
         });
     }
 
     upsertSchoolClass(schoolClass: SchoolClass): void {
         if (schoolClass._id == null) {
-            schoolClass._id = 'sc:' + Guid.newGuid();
+            schoolClass._id = 'sc_' + Guid.newGuid();
         }
         this.db.put(schoolClass);
     }
