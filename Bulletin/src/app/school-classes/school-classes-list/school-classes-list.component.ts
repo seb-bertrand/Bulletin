@@ -7,9 +7,11 @@ import { SchoolClassService } from 'src/app/services/schoolClass.service';
   styleUrls: ['./school-classes-list.component.css']
 })
 export class SchoolClassesListComponent implements OnInit {
+  errorMessage = '';
   schoolClasses: SchoolClass[] = [];
   filteredSchoolClasses: SchoolClass[] = [];
 
+  // tslint:disable-next-line: variable-name
   _listFilter = '';
   get listFilter() {
     return this._listFilter;
@@ -22,8 +24,17 @@ export class SchoolClassesListComponent implements OnInit {
   constructor(private schoolClassService: SchoolClassService) { }
 
   ngOnInit() {
-    this.schoolClasses = this.schoolClassService.getSchoolClasses();
-    this.filteredSchoolClasses = this.schoolClasses;
+    this.schoolClassService.getSchoolClasses();
+  }
+
+  getSchoolClasses() {
+    this.schoolClassService.getSchoolClasses().subscribe(
+      schoolClasses => {
+        this.schoolClasses = schoolClasses;
+        this.filteredSchoolClasses = this.schoolClasses;
+      },
+      error => this.errorMessage = error as any
+    );
   }
 
   performFilter(filterBy: string) {

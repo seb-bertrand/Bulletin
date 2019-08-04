@@ -4,22 +4,24 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SchoolClassService } from 'src/app/services/schoolClass.service';
 
 @Component({
-  templateUrl: './school-classes-details.component.html',
-  styleUrls: ['./school-classes-details.component.css']
+  selector: 'app-school-classes-edit',
+  templateUrl: './school-classes-edit.component.html',
+  styleUrls: ['./school-classes-edit.component.css']
 })
-export class SchoolClassesDetailsComponent implements OnInit {
+export class SchoolClassesEditComponent implements OnInit {
   errorMessage = '';
   schoolClass: SchoolClass | undefined;
-
   constructor(private route: ActivatedRoute, private router: Router,
               private schoolClassService: SchoolClassService) {
 
-  }
+}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.getSchoolClassById(id);
+    } else {
+      this.schoolClass = new SchoolClass();
     }
   }
 
@@ -30,8 +32,13 @@ export class SchoolClassesDetailsComponent implements OnInit {
     );
   }
 
-  onBack() {
+  onSubmit() {
+    this.schoolClassService.upsertSchoolClass(this.schoolClass);
     this.router.navigate(['/classes']);
+  }
+
+  onBack() {
+    this.router.navigate(['/classes', this.schoolClass._id]);
   }
 
 }

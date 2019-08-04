@@ -7,18 +7,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatInputModule,
-    MatSidenavModule
-  ],
+  imports: [],
   exports: [
     CommonModule,
     FormsModule,
@@ -27,7 +23,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatIconModule,
     MatListModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatMenuModule,
+    MatCardModule,
+    MatGridListModule
   ]
 })
 export class SharedModule { }

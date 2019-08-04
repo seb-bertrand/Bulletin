@@ -1,0 +1,46 @@
+<mat-toolbar *ngIf='schoolClass' class="toolbar">
+    <button mat-icon-button (click)="onBack()">
+        <mat-icon>arrow_back_ios</mat-icon>
+        <span>Classes</span>
+    </button>
+    
+    <span class="pageTitle">{{schoolClass.label}}</span>
+</mat-toolbar>
+<mat-card class="schoolClassDetailsCard">
+    <mat-card-title>
+        Modifier la classe
+    </mat-card-title>
+    <mat-card-content>
+        <form class="schoolClassform" (ngSubmit)="onSubmit()" #schoolClassForm="ngForm">
+            <mat-form-field class="full-width">
+                <input  matInput required
+                        id="label"
+                        placeholder="Libellé"
+                        [(ngModel)]="schoolClass.label" name="label">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+                <input  matInput required 
+                        id="professorFirstName"
+                        placeholder="Prénom du titulaire" 
+                        [(ngModel)]="schoolClass.professorFirstName" name="professorFirstName">
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input  matInput required
+                        id="professorLastName"
+                        placeholder="Nom du titulaire"
+                        [(ngModel)]="schoolClass.professorLastName" name="professorLastName">
+            </mat-form-field>
+            <div>
+                <button mat-raised-button 
+                        (click)="onBack()"
+                        class="formButton">Annuler</button>
+
+                <button mat-raised-button color="primary"
+                        type="submit" class="formButton"
+                        [disabled]="!schoolClassForm.form.valid">Sauvegarder</button>         
+            </div>
+        </form>
+    </mat-card-content>    
+</mat-card>

@@ -14,7 +14,7 @@
 
   <mat-nav-list *ngIf='filteredSchoolClasses && filteredSchoolClasses.length'>
     <a  mat-list-item 
-        [routerLink]="['/classes', schoolClass.id]" 
+        [routerLink]="['/classes', schoolClass._id]" 
         *ngFor="let schoolClass of filteredSchoolClasses"> 
             {{ schoolClass.label }} 
     </a>
