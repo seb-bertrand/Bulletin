@@ -8,7 +8,9 @@
 </mat-toolbar>
 <mat-card class="schoolClassDetailsCard" *ngIf='schoolClass'>
     <mat-card-title>
-        Modifier la classe
+        <span *ngIf='schoolClass._id'>Modifier</span> 
+        <span *ngIf='!schoolClass._id'>Créer</span> 
+        <span> une classe</span>
     </mat-card-title>
     <mat-card-content>
         <form class="schoolClassform" (ngSubmit)="onSubmit()" #schoolClassForm="ngForm">
