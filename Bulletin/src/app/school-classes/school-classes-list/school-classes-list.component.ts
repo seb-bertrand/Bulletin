@@ -8,6 +8,7 @@ import { SchoolClassService } from 'src/app/services/schoolClass.service';
 })
 export class SchoolClassesListComponent implements OnInit {
   errorMessage = '';
+  isSearchFieldVisible: boolean;
   schoolClasses: SchoolClass[] = [];
   filteredSchoolClasses: SchoolClass[] = [];
 
@@ -42,6 +43,13 @@ export class SchoolClassesListComponent implements OnInit {
     return this.schoolClasses.filter((schoolClass: SchoolClass) =>
     schoolClass.label.toLocaleLowerCase().indexOf(filterBy) !== -1
     );
+  }
+
+  onSearchClick() {
+    this.isSearchFieldVisible = !this.isSearchFieldVisible;
+    if(!this.isSearchFieldVisible) {
+      this.listFilter = '';
+    }
   }
 
 }
