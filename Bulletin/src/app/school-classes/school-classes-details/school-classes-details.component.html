@@ -20,7 +20,7 @@
         </button>        
       </mat-menu>
 </mat-toolbar>
-<mat-card class="schoolClassDetailsCard">
+<mat-card class="schoolClassDetailsCard" *ngIf='schoolClass'>
     <mat-card-title>
         Classe de {{schoolClass.professorFirstName}} {{schoolClass.professorLastName}} 
     </mat-card-title>

@@ -6,7 +6,7 @@
     
     <span class="pageTitle">{{schoolClass.label}}</span>
 </mat-toolbar>
-<mat-card class="schoolClassDetailsCard">
+<mat-card class="schoolClassDetailsCard" *ngIf='schoolClass'>
     <mat-card-title>
         Modifier la classe
     </mat-card-title>
