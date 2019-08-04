@@ -38,7 +38,12 @@ export class SchoolClassesEditComponent implements OnInit {
   }
 
   onBack() {
-    this.router.navigate(['/classes', this.schoolClass._id]);
+    if(this.schoolClass._id) {
+    	this.router.navigate(['/classes', this.schoolClass._id]);
+    } else {
+    	this.router.navigate(['/classes']);
+    } 
+    
   }
 
 }
