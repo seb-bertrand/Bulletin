@@ -51,8 +51,8 @@ export class SchoolClassService {
     }
 
     deleteSchoolClass(id: string): void {
-        this.db.get(id).then(function(schoolClass: SchoolClass) {
-            this.db.remove(schoolClass);
-        });
+        this.getSchoolClassById(id).subscribe(
+            schoolClass => this.db.remove(schoolClass)
+        );
     }
 }

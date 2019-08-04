@@ -30,6 +30,11 @@ export class SchoolClassesDetailsComponent implements OnInit {
     );
   }
 
+  deleteSchoolClass(id: string) {
+	this.schoolClassService.deleteSchoolClass(id);
+	this.onBack(); //TODO : called before the delete process has ended. Get a promise and wait for the delete to finish
+  }
+
   onBack() {
     this.router.navigate(['/classes']);
   }
