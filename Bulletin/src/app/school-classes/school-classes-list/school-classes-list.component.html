@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+    <span>Classes</span>
+  
+    <!-- This fills the remaining space of the current row -->
+    <span class="fill-remaining-space"></span>
+
+    <mat-form-field class="search-form-field" *ngIf="isSearchFieldVisible">
+        <input matInput type="text" placeholder="Rechercher" [(ngModel)]="listFilter">
+        <button mat-button *ngIf="listFilter" matSuffix mat-icon-button aria-label="Effacer" (click)="listFilter=''">
+          <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <button mat-button matSuffix mat-icon-button aria-label="Rechercher" (click)="onSearchClick()">
+      <mat-icon>search</mat-icon>
+    </button>
+    <button mat-button matSuffix mat-icon-button aria-label="Nouveau" [routerLink]="['/classes/new']">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-nav-list *ngIf='filteredSchoolClasses && filteredSchoolClasses.length'>
+    <a  mat-list-item 
+        [routerLink]="['/classes', schoolClass._id]" 
+        *ngFor="let schoolClass of filteredSchoolClasses"> 
+            {{ schoolClass.label }} 
+    </a>
+</mat-nav-list>

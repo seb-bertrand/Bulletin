@@ -1,0 +1,30 @@
+<mat-toolbar *ngIf='schoolClass' class="toolbar">
+    <button mat-icon-button (click)="onBack()">
+        <mat-icon>arrow_back_ios</mat-icon>
+        <span>Classes</span>
+    </button>
+    
+    <span class="pageTitle">{{schoolClass.label}}</span>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu class">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/classes/edit', schoolClass._id]" >
+          <mat-icon>edit</mat-icon>
+          <span>Modifier</span>
+        </button>
+        <button mat-menu-item (click)="deleteSchoolClass(schoolClass._id)">
+          <mat-icon>delete</mat-icon>
+          <span>Supprimer</span>
+        </button>        
+      </mat-menu>
+</mat-toolbar>
+<mat-card class="schoolClassDetailsCard" *ngIf='schoolClass'>
+    <mat-card-title>
+        Classe de {{schoolClass.professorFirstName}} {{schoolClass.professorLastName}} 
+    </mat-card-title>
+    <mat-card-content>
+
+    </mat-card-content>    
+</mat-card>

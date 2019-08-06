@@ -1,0 +1,11 @@
+.schoolClassDetailsCard {
+    margin: 15px;
+}
+
+.toolbar {
+    display: flex;
+}
+
+.pageTitle {
+    margin: auto; 
+}
