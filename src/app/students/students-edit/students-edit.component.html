@@ -1,0 +1,41 @@
+<mat-toolbar *ngIf='student' class="toolbar">
+    <button mat-icon-button (click)="onBack()">
+        <mat-icon>arrow_back_ios</mat-icon>
+        <span>Retour</span>
+    </button>
+    
+    <span class="pageTitle">{{student.firstName}} {{student.lastName | uppercase}}</span>
+</mat-toolbar>
+<mat-card class="studentDetailsCard" *ngIf='student'>
+    <mat-card-title>
+        <span *ngIf='student._id'>Modifier</span> 
+        <span *ngIf='!student._id'>Créer</span> 
+        <span> un élève</span>
+    </mat-card-title>
+    <mat-card-content>
+        <form class="studentform" (ngSubmit)="onSubmit()" #studentform="ngForm">            
+            <mat-form-field class="full-width">
+                <input  matInput required 
+                        id="firstName"
+                        placeholder="Prénom de l'élève" 
+                        [(ngModel)]="student.firstName" name="firstName">
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input  matInput required
+                        id="lastName"
+                        placeholder="Nom de l'élève"
+                        [(ngModel)]="student.lastName" name="lastName">
+            </mat-form-field>
+            <div>
+                <button mat-raised-button 
+                        (click)="onBack()"
+                        class="formButton">Annuler</button>
+
+                <button mat-raised-button color="primary"
+                        type="submit" class="formButton"
+                        [disabled]="!studentform.form.valid">Sauvegarder</button>         
+            </div>
+        </form>
+    </mat-card-content>    
+</mat-card>

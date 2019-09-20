@@ -5,6 +5,7 @@ import { SchoolClassesListComponent } from './school-classes-list/school-classes
 import { SchoolClassesDetailsComponent } from './school-classes-details/school-classes-details.component';
 import { RouterModule } from '@angular/router';
 import { SchoolClassesEditComponent } from './school-classes-edit/school-classes-edit.component';
+import { StudentsModule } from '../students/students.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SchoolClassesEditComponent } from './school-classes-edit/school-classes
   imports: [
     CommonModule,
     SharedModule,
+    StudentsModule,
     RouterModule.forChild([
       { path: 'classes', component: SchoolClassesListComponent },
       { path: 'classes/new', component: SchoolClassesEditComponent },
