@@ -5,5 +5,5 @@ export class Student {
     _rev: string;
     firstName: string;
     lastName: string;
-    schoolClassId: number;
+    schoolClassId: string;
 }

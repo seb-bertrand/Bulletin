@@ -10,8 +10,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-
-
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
   declarations: [],
   imports: [],
@@ -26,7 +25,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatSidenavModule,
     MatMenuModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule,
   ]
 })
 export class SharedModule { }

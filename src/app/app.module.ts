@@ -8,6 +8,7 @@ import { SchoolClassesModule } from './school-classes/school-classes.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home/home.component';
 import { SharedModule } from './shared/shared.module';
+import { StudentsModule } from './students/students.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SharedModule } from './shared/shared.module';
       { path: 'home', component: HomeComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
-    ])
+    ]),
+    StudentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

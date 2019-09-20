@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SchoolClass } from 'src/app/shared/models/school-class';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SchoolClassService } from 'src/app/services/schoolClass.service';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   templateUrl: './school-classes-details.component.html',
@@ -12,7 +13,8 @@ export class SchoolClassesDetailsComponent implements OnInit {
   schoolClass: SchoolClass | undefined;
 
   constructor(private route: ActivatedRoute, private router: Router,
-              private schoolClassService: SchoolClassService) {
+              private schoolClassService: SchoolClassService,
+              private studentService: StudentService) {
 
   }
 
@@ -31,6 +33,7 @@ export class SchoolClassesDetailsComponent implements OnInit {
   }
 
   deleteSchoolClass(id: string) {
+    this.studentService.deleteClassStudents(id);
 	this.schoolClassService.deleteSchoolClass(id);
 	this.onBack(); //TODO : called before the delete process has ended. Get a promise and wait for the delete to finish
   }

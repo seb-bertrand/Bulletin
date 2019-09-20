@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+  }
+  
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.studentHeader {
+  display: flex;
+}
+
+.marginAuto {
+  margin: auto; 
+}
+
+.newStudentButton {
+  height: 40px;
+}
+
+.cdk-column-editButton,
+.cdk-column-deleteButton {
+    width: 25px;
+}
+  
