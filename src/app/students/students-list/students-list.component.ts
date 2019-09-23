@@ -18,7 +18,7 @@ export class StudentsListComponent implements OnInit {
   constructor(private studentService: StudentService) { }
 
   ngOnInit() {
-    if(this.schoolClassId) {
+    if (this.schoolClassId) {
       this.getSchoolClassStudents(this.schoolClassId);
     }
   }
@@ -32,7 +32,7 @@ export class StudentsListComponent implements OnInit {
 
   deleteStudent(id: string) {
       this.studentService.deleteStudent(id);
-      if(this.schoolClassId) {
+      if (this.schoolClassId) {
         this.getSchoolClassStudents(this.schoolClassId);
       }
   }
