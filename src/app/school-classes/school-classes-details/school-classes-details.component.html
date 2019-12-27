@@ -25,6 +25,7 @@
         Classe de {{schoolClass.professorFirstName}} {{schoolClass.professorLastName}} 
     </mat-card-title>
     <mat-card-content>
-      <app-students-list [schoolClassId]="schoolClass._id"></app-students-list>
+      <app-students-list [schoolClassId]="schoolClass._id" class="schoolClassSection"></app-students-list>
+      <app-reports-list [schoolClassId]="schoolClass._id" class="schoolClassSection"></app-reports-list>
     </mat-card-content>    
 </mat-card>

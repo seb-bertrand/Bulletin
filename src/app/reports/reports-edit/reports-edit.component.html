@@ -1,0 +1,47 @@
+<mat-toolbar *ngIf='report' class="toolbar">
+    <button mat-icon-button (click)="onBack()">
+        <mat-icon>arrow_back_ios</mat-icon>
+        <span>Retour</span>
+    </button>
+    
+    <span class="pageTitle">{{report.label}}</span>
+</mat-toolbar>
+<mat-card class="reportDetailsCard" *ngIf='report'>
+    <mat-card-title>
+        <span *ngIf='report._id'>Modifier</span> 
+        <span *ngIf='!report._id'>Créer</span> 
+        <span> un bulletin</span>
+    </mat-card-title>
+    <mat-card-content>
+        <form class="reportform" (ngSubmit)="onSubmit()" #reportForm="ngForm">
+            <mat-form-field class="full-width">
+                <input  matInput required
+                        id="rpLabel"
+                        placeholder="Libellé"
+                        [(ngModel)]="report.rpLabel" name="rpLabel">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+                <input matInput [matDatepicker]="periodStartDatePicker" placeholder="Début de la période" [(ngModel)]="report.rpPeriodStartDate" name="rpPriodStartDate">
+                <mat-datepicker-toggle matSuffix [for]="periodStartDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #periodStartDatePicker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput [matDatepicker]="periodEndDatePicker" placeholder="Fin de la période" [(ngModel)]="report.rpPeriodEndDate" name="rpPeriodEndDate">
+                <mat-datepicker-toggle matSuffix [for]="periodEndDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #periodEndDatePicker></mat-datepicker>
+            </mat-form-field>
+
+            <div>
+                <button mat-raised-button 
+                        (click)="onBack()"
+                        class="formButton">Annuler</button>
+
+                <button mat-raised-button color="primary"
+                        type="submit" class="formButton"
+                        [disabled]="!reportForm.form.valid">Sauvegarder</button>         
+            </div>
+        </form>
+    </mat-card-content>    
+</mat-card>
