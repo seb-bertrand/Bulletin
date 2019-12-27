@@ -14,7 +14,6 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     SharedModule,
     RouterModule.forChild([
-      
       { path: 'classes/:schoolClassId/students/new', component: StudentsEditComponent },
       { path: 'students/edit/:id', component: StudentsEditComponent }
     ])

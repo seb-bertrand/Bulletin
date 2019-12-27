@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+  }
+  
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.reportHeader {
+  display: flex;
+}
+
+.marginAuto {
+  margin: auto; 
+}
+
+.newReportButton {
+  height: 40px;
+}
+
+.cdk-column-editButton,
+.cdk-column-deleteButton {
+    width: 25px;
+}
+  

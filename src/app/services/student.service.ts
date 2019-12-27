@@ -14,7 +14,6 @@ export class StudentService {
   private db: any;
 
   constructor() {
-      
       this.db = new PouchDB('schoolClassesDB');
       this.db.createIndex({
         index: {
@@ -65,7 +64,7 @@ export class StudentService {
     );
   }
 
-  deleteClassStudents(schoolClassId : string): void {
+  deleteClassStudents(schoolClassId: string): void {
     this.getStudentsBySchoolClassId(schoolClassId).subscribe(
       students => students.forEach(student => {
         this.db.remove(student._id, student._rev);

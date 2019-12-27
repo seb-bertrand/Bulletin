@@ -47,7 +47,7 @@ export class SchoolClassesListComponent implements OnInit {
 
   onSearchClick() {
     this.isSearchFieldVisible = !this.isSearchFieldVisible;
-    if(!this.isSearchFieldVisible) {
+    if (!this.isSearchFieldVisible) {
       this.listFilter = '';
     }
   }
