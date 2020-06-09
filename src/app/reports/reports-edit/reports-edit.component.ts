@@ -40,7 +40,11 @@ export class ReportsEditComponent implements OnInit {
   }
 
   onBack() {
-    this.router.navigate(['/classes', this.report.rpSchoolClassId]);
+    if (this.report._id) {
+      this.router.navigate(['/reports', this.report._id]);
+    } else {
+      this.router.navigate(['/classes', this.report.rpSchoolClassId]);
+    }
   }
 
 }
