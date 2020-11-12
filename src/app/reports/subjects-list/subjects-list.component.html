@@ -1,0 +1,29 @@
+<div class="subjectHeader">
+    <h3>Matières</h3>
+    <span class="marginAuto"></span>
+    <button mat-button color="primary"
+            class="newSubjectButton"
+            (click)="addReportSubject()">
+        Ajouter une matière
+    </button>
+</div>
+
+<mat-accordion *ngIf="reportSubjects && reportSubjects.length" multi="true"  >
+
+    <mat-expansion-panel *ngFor="let reportSubject of reportSubjects" class="reportSubjectsList">
+      <mat-expansion-panel-header>
+            {{reportSubject.sbjTitle}}
+      </mat-expansion-panel-header>
+     
+      <app-rubrics-list [subjectId]="reportSubject._id"></app-rubrics-list>
+      
+      <mat-action-row>
+        <button mat-button color="primary" (click)="updateReportSubject(reportSubject)">
+            Modifier
+        </button>
+        <button mat-button color="warn" (click)="deleteSubject(reportSubject)" >
+            Supprimer
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
