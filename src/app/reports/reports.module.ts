@@ -5,12 +5,18 @@ import { ReportsListComponent } from './reports-list/reports-list.component';
 import { ReportsDetailsComponent } from './reports-details/reports-details.component';
 import { ReportsEditComponent } from './reports-edit/reports-edit.component';
 import { RouterModule } from '@angular/router';
+import { SubjectsListComponent } from './subjects-list/subjects-list.component';
+import { SubjectsEditComponent } from './subjects-edit/subjects-edit.component';
+import { RubricsListComponent } from './rubrics-list/rubrics-list.component';
 
 @NgModule({
   declarations: [
     ReportsListComponent,
     ReportsDetailsComponent,
-    ReportsEditComponent
+    ReportsEditComponent,
+    SubjectsListComponent,
+    SubjectsEditComponent,
+    RubricsListComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +26,9 @@ import { RouterModule } from '@angular/router';
       { path: 'reports/edit/:id', component: ReportsEditComponent },
       { path: 'reports/:id', component: ReportsDetailsComponent }
     ])
+  ],
+  entryComponents: [
+    SubjectsEditComponent
   ],
   exports : [
     ReportsListComponent

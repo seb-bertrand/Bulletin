@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>
+    <span *ngIf='data.subject._id'>Modifier</span> 
+    <span *ngIf='!data.subject._id'>Créer</span> 
+    <span> une matière</span>
+</h2>
+<mat-dialog-content>
+   <form class="subjectform" (ngSubmit)="onSubmit()" #reportForm="ngForm">
+        <mat-form-field class="full-width">
+            <input  matInput required
+                    id="sbjTitle"
+                    placeholder="Titre"
+                    [(ngModel)]="data.subject.sbjTitle" name="sbjTitle">
+        </mat-form-field>
+
+        <div>
+            <button mat-button mat-dialog-close>Annuler</button>
+            <button mat-raised-button color="primary"
+                    type="submit" class="formButton"
+                    [disabled]="!reportForm.form.valid">Sauvegarder</button>         
+        </div>      
+    </form> 
+</mat-dialog-content>

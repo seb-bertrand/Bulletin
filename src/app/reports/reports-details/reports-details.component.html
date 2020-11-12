@@ -29,3 +29,4 @@
       <p>Fin de période : {{report.rpPeriodEndDate | date:'dd/MM/yyyy'}}</p>
     </mat-card-content>    
 </mat-card>
+<app-subjects-list *ngIf="report" [reportId]="report._id"></app-subjects-list>
