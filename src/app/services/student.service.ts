@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Student } from 'src/app/shared/models/student';
-import PouchDB from 'pouchdb-browser';
+import PouchDB from 'pouchdb';
 import PouchDBFind from 'pouchdb-find';
 import { Guid } from '../shared/tools/guid';
 import { Observable } from 'rxjs';
