@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RubricsListComponent } from './rubrics-list.component';
 
@@ -6,12 +6,12 @@ describe('RubricsListComponent', () => {
   let component: RubricsListComponent;
   let fixture: ComponentFixture<RubricsListComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [ RubricsListComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RubricsListComponent);
