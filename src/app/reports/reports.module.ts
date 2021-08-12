@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { SubjectsListComponent } from './subjects-list/subjects-list.component';
 import { SubjectsEditComponent } from './subjects-edit/subjects-edit.component';
 import { RubricsListComponent } from './rubrics-list/rubrics-list.component';
+import { RubricsEditComponent } from './rubrics-edit/rubrics-edit.component';
+import { SubjectsDetailsComponent } from './subjects-details/subjects-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RubricsListComponent } from './rubrics-list/rubrics-list.component';
     ReportsEditComponent,
     SubjectsListComponent,
     SubjectsEditComponent,
-    RubricsListComponent
+    RubricsListComponent,
+    RubricsEditComponent,
+    SubjectsDetailsComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,7 @@
+<form (ngSubmit)="addNewRubric()" #rubricForm="ngForm">
+    <mat-form-field appearance="standard">
+        <mat-label>Nouvelle rubrique</mat-label>
+        <input matInput required placeholder="Titre" [(ngModel)]="newRubric.rbTitle" id="rbTitle" name="rbTitle">
+    </mat-form-field>
+    <button mat-button type="submit" [disabled]="!rubricForm.form.valid">+</button>
+</form>

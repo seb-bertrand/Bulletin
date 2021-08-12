@@ -4,6 +4,7 @@ import PouchDBFind from 'pouchdb-find';
 import { Guid } from '../shared/tools/guid';
 import { Observable } from 'rxjs';
 import { Subject } from '../shared/models/subject';
+import { RubricsService } from './rubrics.service';
 PouchDB.plugin(PouchDBFind);
  
 @Injectable({
@@ -13,7 +14,7 @@ export class SubjectService {
  
   private db: any;
  
-  constructor() {
+  constructor(private rubricsService: RubricsService) {
     this.db = new PouchDB('schoolClassesDB');
     this.db.createIndex({
       index: {
@@ -57,6 +58,7 @@ export class SubjectService {
   }
  
   deleteSubject(id: string): void {
+    this.rubricsService.deleteSubjectRubrics(id);
     this.getSubjectById(id).subscribe(
       subject => this.db.remove(subject)
     );
@@ -65,6 +67,7 @@ export class SubjectService {
   deleteReportSubjects(reportId: string): void {
     this.getSubjectsByReportId(reportId).subscribe(
       subjects => subjects.forEach(subject => {
+        this.rubricsService.deleteSubjectRubrics(subject._id);
         this.db.remove(subject._id, subject._rev);
       })
     );

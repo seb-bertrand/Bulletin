@@ -15,7 +15,7 @@
             {{reportSubject.sbjTitle}}
       </mat-expansion-panel-header>
      
-      <app-rubrics-list [subjectId]="reportSubject._id"></app-rubrics-list>
+      <app-subjects-details [subjectId]="reportSubject._id"></app-subjects-details>
       
       <mat-action-row>
         <button mat-button color="primary" (click)="updateReportSubject(reportSubject)">

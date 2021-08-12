@@ -5,9 +5,4 @@ export class Rubric {
     _rev: string;
     rbTitle: string;
     rbSubjectId: string;
-
-    constructor(rbTitle: string, rbSubjectId: string) {
-        this.rbTitle = rbTitle;
-        this.rbSubjectId = rbSubjectId;
-    }
 }

@@ -1,1 +1,12 @@
-<p>rubrics-list works!</p>
+<!-- <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let rubric of subjectRubrics">{{rubric.rbTitle}}</mat-list-item>
+</mat-list> -->
+
+<mat-chip-list aria-label="Rubriques">
+    <mat-chip   *ngFor="let rubric of subjectRubrics"
+                [removable]="true"
+                (removed)="deleteRubric(rubric)">
+        {{rubric.rbTitle}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+</mat-chip-list>
