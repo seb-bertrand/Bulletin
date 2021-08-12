@@ -58,6 +58,7 @@ export class SubjectService {
   }
  
   deleteSubject(id: string): void {
+    this.rubricsService.deleteSubjectRubrics(id);
     this.getSubjectById(id).subscribe(
       subject => this.db.remove(subject)
     );
