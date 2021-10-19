@@ -8,11 +8,13 @@ import { HomeComponent } from './home/home/home.component';
 import { SchoolClassesModule } from './school-classes/school-classes.module';
 import { SharedModule } from './shared/shared.module';
 import { StudentsModule } from './students/students.module';
+import { AboutComponent } from './home/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -23,8 +25,9 @@ import { StudentsModule } from './students/students.module';
     StudentsModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: '**', redirectTo: 'home', pathMatch: 'full' }
+      { path: 'about', component: AboutComponent },
+      { path: '', redirectTo: 'classes', pathMatch: 'full' },
+      { path: '**', redirectTo: 'classes', pathMatch: 'full' }
     ]),
   ],
   providers: [],
