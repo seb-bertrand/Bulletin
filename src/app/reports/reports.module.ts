@@ -12,30 +12,27 @@ import { RubricsEditComponent } from './rubrics-edit/rubrics-edit.component';
 import { SubjectsDetailsComponent } from './subjects-details/subjects-details.component';
 
 @NgModule({
-  declarations: [
-    ReportsListComponent,
-    ReportsDetailsComponent,
-    ReportsEditComponent,
-    SubjectsListComponent,
-    SubjectsEditComponent,
-    RubricsListComponent,
-    RubricsEditComponent,
-    SubjectsDetailsComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    RouterModule.forChild([
-      { path: 'classes/:schoolClassId/reports/new', component: ReportsEditComponent },
-      { path: 'reports/edit/:id', component: ReportsEditComponent },
-      { path: 'reports/:id', component: ReportsDetailsComponent }
-    ])
-  ],
-  entryComponents: [
-    SubjectsEditComponent
-  ],
-  exports : [
-    ReportsListComponent
-  ]
+    declarations: [
+        ReportsListComponent,
+        ReportsDetailsComponent,
+        ReportsEditComponent,
+        SubjectsListComponent,
+        SubjectsEditComponent,
+        RubricsListComponent,
+        RubricsEditComponent,
+        SubjectsDetailsComponent
+    ],
+    imports: [
+        CommonModule,
+        SharedModule,
+        RouterModule.forChild([
+            { path: 'classes/:schoolClassId/reports/new', component: ReportsEditComponent },
+            { path: 'reports/edit/:id', component: ReportsEditComponent },
+            { path: 'reports/:id', component: ReportsDetailsComponent }
+        ])
+    ],
+    exports: [
+        ReportsListComponent
+    ]
 })
 export class ReportsModule { }
