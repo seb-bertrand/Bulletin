@@ -105,5 +105,7 @@
       }
     }
   },
-  "defaultProject": "Bulletin"
+  "cli": {
+    "analytics": false
+  }
 }
